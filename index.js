@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 
-// test 
+// test
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
@@ -17,6 +17,6 @@ wss.on('connection', (ws) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log('Signaling server is running on port 3000');
+server.listen(3010, () => {
+    console.log('Signaling server is running on port 3010');
 });
