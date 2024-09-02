@@ -56,3 +56,26 @@ server.on('upgrade', (request, socket, head) => {
 });
 
 console.log('8 - -------------- test1111111111111111');
+
+// Get Images by Category
+app.get('/api/images/:category', async (req, res) => {
+    try {
+        const { category } = req.params
+        const images = await Image.find({ category })
+        res.json(images)
+    } catch (error) {
+        console.error(error)
+        res.status(500).send('Internal Server Error')
+    }
+})
+
+// Get all Images
+app.get('/api/images', async (req, res) => {
+    try {
+        const images = await Image.find()
+        res.json(images)
+    } catch (error) {
+        console.error(error)
+        res.status(500).send('Internal Server Error')
+    }
+})
