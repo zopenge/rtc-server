@@ -10,5 +10,9 @@
             "src": "/(.*)",
             "dest": "/index.js"
         }
-    ]
+    ],
+    "scripts": {
+        "build": "npm install",
+        "start": "npm run start"
+    }
 }
